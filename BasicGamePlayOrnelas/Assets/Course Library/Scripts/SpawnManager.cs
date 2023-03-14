@@ -9,10 +9,13 @@ public class SpawnManager : MonoBehaviour
     private float spawnPosZ = 20;
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
+    private float spawnPositionX = 22;
+    private float spawnRangeZ = 10;
 
     void Start()
     {
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+        InvokeRepeating("RightSpawnRandomAnimal", startDelay, spawnInterval);
     }
     
     void SpawnRandomAnimal()
@@ -20,6 +23,12 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
+        
     }
-    
+    void RightSpawnRandomAnimal()
+    {
+        Vector3 spawnxPos = new Vector3(spawnPositionX, 0, (Random.Range(-spawnRangeZ, spawnRangeZ)));
+        int animalIndex = Random.Range(0, animalPrefabs.Length);
+        Instantiate(animalPrefabs[animalIndex], spawnxPos, animalPrefabs[animalIndex].transform.rotation);
+    }
 }
