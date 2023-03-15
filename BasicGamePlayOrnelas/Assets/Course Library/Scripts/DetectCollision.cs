@@ -6,8 +6,25 @@ public class DetectCollision : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject == GameObject.FindWithTag("Player"))
+        {
+            PlayerStats.lives--;
+            Debug.Log("Lives :" + PlayerStats.lives);
+        }
+        
+        if (other.gameObject == GameObject.FindWithTag("Projectile"))
+        {
+            PlayerStats.score++;
+            Debug.Log("Score :" + PlayerStats.score);
+        }
+        if(PlayerStats.lives < 1)
+        {
+            Debug.Log("Game Over!");
+        }
+
         Destroy(gameObject);
-        Destroy(other.gameObject);
-        Debug.Log("Hit");
+        Destroy(GameObject.FindWithTag("Projectile"));
+
+       
     }
 }

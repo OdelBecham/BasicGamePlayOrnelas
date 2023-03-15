@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float xRange = 10;
     public float zRange = 10;
     public float negzRange = 10;
-
+    private Vector3 offset = new Vector3(0,0,1.5f);
 
     // Update is called once per frame
     void Update()
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         }
             if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectileprefab, transform.position, projectileprefab.transform.rotation);
+            Instantiate(projectileprefab, transform.position + offset, projectileprefab.transform.rotation);
         }
     }
 }

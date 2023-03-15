@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 9500000}
   - component: {fileID: 1499517406}
+  - component: {fileID: 6354869569372441928}
   m_Layer: 0
   m_Name: SimpleFarmer_Man_02_Black
   m_TagString: Untagged
@@ -72,8 +73,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileprefab: {fileID: 4232076754421170819, guid: 48842de653a74754ebff53cc7eaa13bd, type: 3}
   horizontalInput: 0
+  verticalInput: 0
   speed: 40
   xRange: 20
+  zRange: 10
+  negzRange: 10
+--- !u!65 &6354869569372441928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.3224227, z: 1}
+  m_Center: {x: 0, y: 1.1612111, z: 0}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
